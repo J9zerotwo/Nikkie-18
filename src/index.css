@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: #FFE3D8;
+  color: #4A1525; /* Deep Rosewood for high-contrast readable text */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+@layer utilities {
+  /* 1. Main Background Gradient */
+  .bg-theme-main {
+    @apply bg-gradient-to-br from-[#FFE3D8] via-[#FDDACD] to-[#F8C8BC];
+  }
+
+  /* 2. Button & Highlight Gradient */
+  .bg-theme-accent {
+    @apply bg-gradient-to-r from-[#F9BDB7] via-[#F5A8A1] to-[#EE9B96];
+  }
+
+  /* 3. Soft Coral Accent Text */
+  .text-theme-coral {
+    color: #F5A8A1;
+  }
+
+  /* 4. Single Card / Surface Color */
+  .bg-theme-single {
+    background-color: #FDDACD;
+  }
+
+  /* 5. Deep Rosewood Text Color (High Contrast & Readability) */
+  .text-theme-rosewood {
+    color: #4A1525;
+  }
+
+  /* 6. Bridgerton x Tangled Gradient Text */
+  .text-gradient-bridgerton-tangled {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#4A1525] via-[#881337] to-[#C05663];
+  }
+
+  /* 7. Regency Lace Pattern (Matching Peach Palette) */
+  .bg-regency-lace {
+    background-color: #FFE3D8;
+    background-image: radial-gradient(#F5A8A1 0.6px, transparent 0.6px), radial-gradient(#F5A8A1 0.6px, #FFE3D8 0.6px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+  }
+}
+
+/* Floating Lantern Animation using dynamic opacity variable */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.8) rotate(-2deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: var(--lantern-opacity, 0.5);
+  }
+  85% {
+    opacity: var(--lantern-opacity, 0.5);
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.1) rotate(3deg);
+    opacity: 0;
+  }
+}
+
+.animate-lantern {
+  animation: floatUp linear infinite;
+}
