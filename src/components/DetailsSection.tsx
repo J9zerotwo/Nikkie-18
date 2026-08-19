@@ -9,8 +9,8 @@ export const DetailsSection: React.FC = () => {
 
   // 1. HEADER CORNER & CROWN PNG ASSETS:
   const crownImageUrl = "/crown.png";         
-  const leftCornerImageUrl = "/flower-left.png";   
-  const rightCornerImageUrl = "/flower-right.png"; 
+  const leftCornerImageUrl = "/flower.png";   
+  const rightCornerImageUrl = "/flower.png"; 
 
   // 2. VENUE DETAILS & MEDIA ASSETS:
   const venueName = "The Clubhouse at One Balete ";
