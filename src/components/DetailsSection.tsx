@@ -132,6 +132,9 @@ export const DetailsSection: React.FC = () => {
             >
               <img
                 src={venuePhoto}
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "place.png"; // Fallback image URL
+                }}
                 alt="Venue Photo"
                 className={`w-full ${isVenueExpanded ? 'h-auto max-h-[70vh] object-contain' : 'h-full object-cover'}`}
               />
@@ -189,6 +192,9 @@ export const DetailsSection: React.FC = () => {
                   ? 'h-auto max-h-none scale-100' 
                   : 'h-auto max-h-[280px] sm:max-h-[480px] scale-100'
               }`}
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = "outfit.png"; // Fallback image URL
+              }}
             />
 
             <div className="absolute bottom-3 right-3 p-2 px-3 bg-[#4A1525]/85 text-amber-200 rounded-full backdrop-blur-md shadow-lg flex items-center space-x-1.5 text-xs font-serif italic z-10">
