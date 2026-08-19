@@ -51,21 +51,6 @@ export const GallerySection: React.FC = () => {
                           : 'h-auto max-h-[280px] sm:max-h-[480px] object-contain group-hover:brightness-105'
                       }`}
                     />
-                    
-                    {/* In-Place Expand/Shrink Badge */}
-                    <div className="absolute bottom-0.5 right-0.5 p-0.5 px-0.5 bg-[#4A1525]/85 text-amber-100 rounded-full backdrop-blur-md shadow-lg flex items-center space-x-1.5 text-xs font-serif italic">
-                      {isExpanded ? (
-                        <>
-                          <Minimize2 className="w-1.5 h-1.5" />
-                          <span>Tap to Shrink</span>
-                        </>
-                      ) : (
-                        <>
-                          <Maximize2 className="w-1.5 h-1.5" />
-                          <span>Tap to Expand</span>
-                        </>
-                      )}
-                    </div>
                   </div>
                 )}
               </div>
